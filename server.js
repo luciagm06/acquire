@@ -16,7 +16,7 @@ async function startServer() {
     console.log('[ENV] ACQUIRE_PORT:', process.env.ACQUIRE_PORT);
     console.log('[ENV] MONGO_URI:', process.env.MONGO_URI);
     console.log('[ENV] KUNNA_API_URL:', process.env.KUNNA_API_URL);
-    console.log('[ENV] KUNNA_METER:', process.env.KUNNA_METER);
+    console.log('[ENV] KUNNA_ALIAS:', process.env.KUNNA_ALIAS);  // En lugar de KUNNA_METER
     
     await connectMongo();
     console.log('[ACQUIRE] MongoDB conectado exitosamente');

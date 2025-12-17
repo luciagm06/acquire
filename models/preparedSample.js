@@ -46,4 +46,4 @@ const PreparedSampleSchema = new Schema({
   }
 });
 
-module.exports = mongoose.model('PreparedSample', PreparedSampleSchema, 'prepared_samples');
+module.exports = mongoose.model('PreparedSample', PreparedSampleSchema, 'acquire');
