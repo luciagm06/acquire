@@ -4,7 +4,7 @@ const axios = require('axios');
 
 const KUNNA_API_URL = process.env.KUNNA_API_URL;
 const KUNNA_TOKEN = process.env.KUNNA_TOKEN;
-const KUNNA_ALIAS = process.env.KUNNA_ALIAS;  // ← CAMBIO
+const KUNNA_ALIAS = process.env.KUNNA_ALIAS;  
 
 async function fetchAndPrepareData() {
   try {
@@ -41,11 +41,11 @@ async function fetchAndPrepareData() {
       time_end: timeEnd.toISOString(),
       filters: [
         { filter: "name", values: ["1d"] },
-        { filter: "alias", values: [KUNNA_ALIAS] }  // ← CAMBIO: "alias" en lugar de "uid"
+        { filter: "alias", values: [KUNNA_ALIAS] }  
       ],
       limit: 100,
       count: false,
-      order: "DESC"  // ← AÑADIDO
+      order: "DESC"  
     };
 
     console.log('[KUNNA] Request body:', JSON.stringify(requestBody, null, 2));
