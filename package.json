@@ -1,0 +1,25 @@
+{
+  "name": "acquire",
+  "version": "1.0.0",
+  "description": "Servicio de adquisición de datos",
+  "homepage": "https://github.com/luciagm06/acquire#readme",
+  "bugs": {
+    "url": "https://github.com/luciagm06/acquire/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luciagm06/acquire.git"
+  },
+  "license": "ISC",
+  "author": "Lucia Gonzalez Mandler",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "axios": "^1.13.2",
+    "express": "^5.2.1",
+    "mongoose": "^9.0.1"
+  }
+}
