@@ -14,29 +14,34 @@ async function getData(req, res) {
   try {
     console.log('[ACQUIRE] POST /data - Iniciando obtencion de datos...');
 
-    const { rawData, features, targetDate, dailyValues, kunnaMeta, daysUsed, fetchMeta } 
-      = await externalApiService.fetchAndPrepareData();
+    const {
+      rawData,
+      features,
+      targetDate,
+      dailyValues,
+      kunnaMeta,
+      daysUsed,
+      fetchMeta
+    } = await externalApiService.fetchAndPrepareData();
 
     console.log('[ACQUIRE] Features generadas:', features);
 
-
     const saved = await PreparedSample.create({
-      timeStart: new Date(fetchMeta.timeStart),  
-      timeEnd: new Date(fetchMeta.timeEnd),      
-      timeAsk: targetDate,                       
-      features: features                         
+      timeStart: new Date(fetchMeta.timeStart),
+      timeEnd: new Date(fetchMeta.timeEnd),
+      timeAsk: new Date(),
+      features: features
     });
-  
 
     console.log('[ACQUIRE] Datos guardados en MongoDB. ID:', saved._id);
-
+    console.log('[ACQUIRE] timeAsk guardado:', saved.timeAsk);
 
     res.status(201).json({
       dataId: saved._id,
       features: saved.features,
-      featureCount: 7,              
-      scalerVersion: 'v1',          
-      createdAt: saved.timeAsk      
+      featureCount: 7,
+      scalerVersion: 'v1',
+      createdAt: saved.timeAsk
     });
 
   } catch (err) {
